@@ -13,6 +13,8 @@
 		{
 			return $this->valor;
 		}
+
+		public function __construct() {}
 	}
 
 	$objeto = new Casa();
