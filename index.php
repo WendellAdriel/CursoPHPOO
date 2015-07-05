@@ -1,4 +1,5 @@
 <?php
+	/*
 	class Casa
 	{
 		public $tamanho;
@@ -29,4 +30,34 @@
 	echo $objeto2->getValor();
 	var_dump($objeto);
 	var_dump($objeto2);
+	*/
+
+	namespace CursoPHPOO;
+
+	use CursoPHPOO\models\Pessoa;
+	use CursoPHPOO\models\Funcionario;
+	use CursoPHPOO\models\Cliente;
+
+	require_once('models/Pessoa.php');
+	require_once('models/Funcionario.php');
+	require_once('models/Cliente.php');
+
+	$cliente = new Cliente();
+	$funcionario = new Funcionario();
+
+	$cliente->setNome('Wendell');
+	$funcionario->setNome('Adriel');
+	
+	echo $cliente->getNome() . ' / ' . $funcionario->getNome();
+	echo '<br/><hr/><br/>';
+	
+	$cliente->testePolimorfismo();
+	echo '<br/><hr/><br/>';
+	$cliente->teste();
+
+	echo '<br/><hr/><br/>';
+
+	$funcionario->testePolimorfismo();
+	echo '<br/><hr/><br/>';
+	$funcionario->teste();
 ?>
