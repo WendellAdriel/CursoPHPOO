@@ -17,19 +17,23 @@
     	private $db = 'cursophpoo';
     	private $user = 'root';
     	private $password = 'connect';
+        private $con;
 
     	public function __construct()
     	{
-    		$pdo = new PDO("mysql:host=$this->host;dbname=$this->db", "$this->user", "$this->password");
+    		$this->con = new PDO("mysql:host=$this->host;dbname=$this->db", "$this->user", "$this->password");
     		
-    		if(!$pdo){
+    		if(!$this->con){
         		die('Erro ao criar a conexão');
     		} else {
-    			echo 'Conexão realizada com sucesso';
+    			echo 'Conexão realizada com sucesso<br>';
     		}
    			
-   			$pdo->exec("set names utf8");
+   			$this->con->exec("set names utf8");
     	}
-    }
 
-    $conexao = new Conexao();
+        public function getCon()
+        {
+            return $this->con;
+        }
+    }

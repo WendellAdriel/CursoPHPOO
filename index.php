@@ -41,6 +41,7 @@
 	require_once('models/Pessoa.php');
 	require_once('models/Funcionario.php');
 	require_once('models/Cliente.php');
+	require_once('conexao.php');
 
 	$cliente = new Cliente();
 	$funcionario = new Funcionario();
@@ -60,4 +61,6 @@
 	$funcionario->testePolimorfismo();
 	echo '<br/><hr/><br/>';
 	$funcionario->teste();
+
+	
 ?>
